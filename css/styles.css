@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;440&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0f1b;
+  max-width: 1300px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo-name {
+  font-family: "Dancing Script", cursive;
+  padding-left: 14px;
+  padding-top: 7px;
+  font-size: 28px;
+  font-weight: 1000;
+  color: #34a1eb;
+  text-shadow: 1px 1px 1px #34a1eb;
+  margin-left: 0px;
+  float: left;
+}
+
+.topnav {
+  background-color: #0a0f1b;
+  width: 100%;
+  position: fixed;
+  height: 50px;
+  top: 0;
+}
+
+.topnav .lis a {
+  margin-top: 12px;
+  float: right;
+  display: block;
+  color: #34a1eb;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 2px 10px;
+  box-shadow: 0 0 3px 0 #34a1eb inset, 0 0 3px 1px #34a1eb;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.container .coin-price {
+  margin: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc;
+  width: 250px;
+  text-align: center;
+}
+
+.container .coin-price .logo {
+  width: 70px;
+  margin-right: 10px;
+}
+
+h1 {
+  display: block;
+}
+
+.container .coin-price .logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.container .coin-price div {
+  display: block;
+}
+
+.container .coin-price div h1 {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.container #priceHead {
+  font-size: 20px;
+  font-weight: 700;
+  font-size: 25px;
+  color: #34a1eb;
+  margin-bottom: 10px;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.container .coin-price:hover {
+  -ms-transform: scale(1.03);
+  /* IE 9 */
+  -webkit-transform: scale(1.03);
+  /* Safari 3-8 */
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {
+    margin-right: 5px;
+    display: none;
+  }
+
+  #priceHead {
+    margin-top: 60px;
+  }
+
+  .topnav .lis a {
+    margin-right: 8px;
+  }
+  .logo-name {
+    padding-left: 4px;
+  }
+  .container1 {
+    margin: 0 20px;
+  }
+}
+
+/* Currency Converter */
+.showconverter {
+  justify-content: center;
+  align-items: center;
+}
+
+.container1 {
+  background-color: #fff;
+  justify-content: center;
+  padding: 5px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-family: "Yantramanav", sans-serif;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.heading {
+  color: #46406c;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.rate1 {
+  font-size: 1.5rem;
+}
+
+.rate2 {
+  font-size: 1.5rem;
+}
+
+.main {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.swap {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.option select {
+  padding: 2px;
+  width: 70px;
+}
+
+.input input {
+  all: unset;
+  display: inline-block;
+  margin-top: 5px;
+  width: 175px;
+  height: 48px;
+  padding: 5px;
+  background-color: #ebebeb;
+  color: #848484;
+  font-size: rem;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  appearance: textfield;
+}
+
+select {
+  width: 150px;
+  padding: 10px;
+  font-size: medium;
+}
+
+.result {
+  font-size: large;
+  margin-top: 1rem;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #46406c;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+}
+
+.result:active {
+  background-color: #342f52;
+}
+
+.showBtcChart {
+  display: block;
+}

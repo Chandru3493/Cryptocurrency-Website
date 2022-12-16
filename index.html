@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/x-icon" href="images\favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Cryptocurrency Prices</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar starts here -->
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">
+        <span class="logo-name" id="logo-name">CRYPTOSY</span>
+      </a>
+      <div id="showConverter" onclick="converterShow()">
+        <div class="lis">
+          <a href="#Priceconvertor" id="convertor">Crypto Convertor</a>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar ends here -->
+    <div class="container" id="hide">
+      <h1 id="priceHead">Live Cryptocurrency Prices by Market Cap (USD)</h1>
+      <!-- Bitcoin -->
+      <div class="coin-price" id="showBtcChart" onclick="show()">
+        <div class="logo"><img src="images\Bitcoin.png" alt="bitcoin" /></div>
+        <div>
+          <h1><span id="bitcoin"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Ethereum -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Ethereum.png" alt="ethereum" /></div>
+        <div id="showEthChart" onclick="show()">
+          <h1><span id="ethereum"></span></h1>
+          <h1>&nbsp;&nbsp;Ethereum&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Tether -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Tether.png" alt="tether" /></div>
+        <div id="showUsdtChart" onclick="show()">
+          <h1><span id="tether"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Tether&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Binance -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\BNB.png" alt="bnb" /></div>
+        <div id="showBnbChart" onclick="show()">
+          <h1><span id="binance"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Binance&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Ripple -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Ripple.png" alt="ripple" /></div>
+        <div id="showXrpChart" onclick="show()">
+          <h1><span id="ripple"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Ripple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Dogecoin -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Dogecoin.png" alt="dogecoin" /></div>
+        <div id="showDogeChart" onclick="show()">
+          <h1><span id="dogecoin"></span></h1>
+          <h1>&nbsp;&nbsp;Dogecoin&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Cardano -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Cardano.png" alt="cardano" /></div>
+        <div id="showAdaChart" onclick="show()">
+          <h1><span id="cardano"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;Cardano&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Polygon -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Polygon.png" alt="polygon" /></div>
+        <div id="showMaticChart" onclick="show()">
+          <h1><span id="polygon"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;Polygon&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Polkadot -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Polkadot.png" alt="polkadot" /></div>
+        <div id="showDotChart" onclick="show()">
+          <h1><span id="polkadot"></span></h1>
+          <h1>&nbsp;&nbsp;Polkadot&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Litecoin -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Litecoin.png" alt="litecoin" /></div>
+        <div id="showLtcChart" onclick="show()">
+          <h1><span id="litecoin"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;Litecoin&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Solona -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Solona.png" alt="solona" /></div>
+        <div id="showSolChart" onclick="show()">
+          <h1><span id="solona"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Solona&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Tron -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Tron.png" alt="tron" /></div>
+        <div id="showTrxChart" onclick="show()">
+          <h1><span id="tron"></span></h1>
+          <h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tron&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </h1>
+        </div>
+      </div>
+      <!-- Avalanche -->
+      <div class="coin-price">
+        <div class="logo">
+          <img src="images\Avalanche.png" alt="avalanche" />
+        </div>
+        <div id="showAvaxChart" onclick="show()">
+          <h1><span id="avalanche"></span></h1>
+          <h1>&nbsp;&nbsp;Avalanche&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Chainlink -->
+      <div class="coin-price">
+        <div class="logo">
+          <img src="images\Chainlink.png" alt="chainlink" />
+        </div>
+        <div id="showLinkChart" onclick="show()">
+          <h1><span id="chainlink"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Chainlink&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Cosmos -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Cosomos.png" alt="cosmos" /></div>
+        <div id="showAtomChart" onclick="show()">
+          <h1><span id="cosmos"></span></h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Cosmos&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <!-- Flow -->
+      <div class="coin-price">
+        <div class="logo"><img src="images\Flow.png" alt="flow" /></div>
+        <div id="showFlowChart" onclick="show()">
+          <h1><span id="flow"></span></h1>
+          <h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- Bitcoin chart -->
+    <div id="chart">
+      <div class="showBtcChart" style="display: none" id="btcShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_9d8b9"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:BTCUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_9d8b9",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="btcChartHide()" style="color: white">BACK</a>
+      </div>
+      <!-- Bitcoin chart ends-->
+      <!-- Ethereum chart start-->
+      <div class="showEthChart" style="display: none" id="ethShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_b1c27"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:ETHUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_b1c27",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="ethChartHide()" style="color: white">BACK</a>
+      </div>
+      <!-- Ethereum chart ends -->
+      <!-- Tether chart starts-->
+      <div class="showUsdtChart" style="display: none" id="usdtShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_4a749"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "COINBASE:USDTUSD",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_4a749",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="usdtChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Tether chart ends-->
+      <!-- Binance chart starts-->
+      <div class="showBnbChart" style="display: none" id="bnbShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_51114"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:BNBUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_51114",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="bnbChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Binance chart ends-->
+      <!-- Ripple chart starts-->
+      <div class="showXrpChart" style="display: none" id="xrpShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_26cc5"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:XRPUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_26cc5",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="xrpChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Ripple chart ends-->
+      <!-- DogeCoin chart starts-->
+      <div class="showDogeChart" style="display: none" id="dogeShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_8da4f"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:DOGEUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_8da4f",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="dogeChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--DogeCoin chart ends-->
+      <!-- Cardano chart starts-->
+      <div class="showAdaChart" style="display: none" id="adaShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_09b33"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:ADAUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_09b33",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="adaChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Cardano chart ends-->
+      <!-- Polygon chart starts-->
+      <div class="showMaticChart" style="display: none" id="maticShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_ab44b"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:MATICUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_ab44b",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="maticChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Polygon chart ends-->
+      <!-- Polkadot chart starts-->
+      <div class="showDotChart" style="display: none" id="dotShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_71df5"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:DOTUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_71df5",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="dotChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Polkadot chart ends-->
+      <!-- LiteCoin chart starts-->
+      <div class="showLtcChart" style="display: none" id="ltcShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_65605"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:LTCUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_65605",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="ltcChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--LiteCoin chart ends-->
+      <!-- Solona chart starts-->
+      <div class="showSolChart" style="display: none" id="solShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_1a29d"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:SOLUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_1a29d",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="solChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Solona chart ends-->
+      <!-- Tron chart starts-->
+      <div class="showTrxChart" style="display: none" id="trxShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_cacb7"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:TRXUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_cacb7",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="trxChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Tron chart ends-->
+      <!-- Avalanche chart starts-->
+      <div class="showAvaxChart" style="display: none" id="avaxShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_4b701"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:AVAXUSD",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_4b701",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="avaxChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Avalanche chart ends-->
+      <!-- ChainLink chart starts-->
+      <div class="showLinkChart" style="display: none" id="linkShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_a6cdd"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:LINKUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_a6cdd",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="linkChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--ChainLink chart ends-->
+      <!-- Cosmos chart starts-->
+      <div class="showAtomChart" style="display: none" id="atomShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_79c2a"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:ATOMUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_79c2a",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="atomChartHide()" style="color: white">BACK</a>
+      </div>
+      <!--Cosmos chart ends-->
+      <!-- Flow chart starts-->
+      <div class="showFlowChart" style="display: none" id="flowShow">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_7f0e9"></div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: 1000,
+              height: 520,
+              symbol: "BINANCE:FLOWUSDT",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              container_id: "tradingview_7f0e9",
+            });
+          </script>
+        </div>
+        <br />
+        <a onclick="flowChartHide()" style="color: white">BACK</a>
+      </div>
+    </div>
+    <!--Flow chart ends-->
+    <!-- Converter Starts -->
+    <div class="converter" style="display: none" id="converterShow">
+      <div class="container1">
+        <h1 id="priceHead">Cryptocurrency Price Converter</h1>
+        <div class="main">
+          <div class="initial">
+            <div class="options">
+              <select></select>
+            </div>
+            <div class="input">
+              <input type="number" />
+            </div>
+            <span class="material-icons swap" style="font-size: xx-large"
+              >⇄</span
+            >
+            <div class="target">
+              <div class="options">
+                <select></select>
+              </div>
+              <div class="input">
+                <input disabled type="number" />
+              </div>
+            </div>
+            <button class="result">Result</button>
+          </div>
+        </div>
+        <br />
+        <a onclick="converterHide()" style="color: black">BACK</a>
+        <!-- Converter Ends -->
+        <script src="js\livePrice.js"></script>
+        <script src="js\liveChart.js"></script>
+        <script src="js\priceConvert.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
