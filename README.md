@@ -1,6 +1,6 @@
 # **_CRYPTOCURRENCY WEBSITE_**
 
-Developed a cryptocurrency website using HTML, CSS, JavaScript and API. The website shows the real-time price of the cryptocurrency and also the price chart of the cryptocurrency. The website also has a price converter which converts the price of the cryptocurrency into any currency.
+Developed a cryptocurrency website using HTML, CSS, JavaScript, and APIs. The website displays real-time cryptocurrency prices and charts, and includes a price converter that can convert cryptocurrency prices into any currency.
 
 [Click here to view](https://chandru3493.github.io/Cryptocurrency-Website/)
 
